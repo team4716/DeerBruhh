@@ -31,7 +31,7 @@ public class DriveWithJoysticks extends CommandBase {
     protected void execute() {
         drivetrain.arcadeDrive(
                 oi.getStickY(),
-                oi.getStickX());
+                -oi.getStickX());
         SmartDashboard.getNumber("Y Axis", oi.getStickY());
         SmartDashboard.getNumber("X Axis", oi.getStickX());
     }

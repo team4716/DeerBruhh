@@ -37,6 +37,8 @@ public class RobotMap {
             compressorRelay = 1,
             leftPiston = 2,
             rightPiston = 3;
+    
+    public static final int defaultSensitivity = 8;
            
     
     // Additional mappings could be included, but are not used on this robot for
