@@ -5,34 +5,42 @@
  */
 package com.acsrobotics.deerbruhh.subsystems;
 
-import edu.wpi.first.wpilibj.Compressor;
+
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.acsrobotics.deerbruhh.RobotMap;
 import com.acsrobotics.deerbruhh.commands.LoaderStop;
+import com.acsrobotics.HelperClasses.PneumaticHelper;
 
 /**
  *
  * @author Alessio
  */
 public class Loader extends Subsystem {
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
-    
+
     Victor leftMotor;
     Victor rightMotor;
-    Compressor mainCompressor;
+    
+    PneumaticHelper leftPiston;
+    PneumaticHelper rightPiston;
     
     
     public Loader(){
         super("Loader");
         leftMotor = new Victor(RobotMap.leftIntakeMotor);
         rightMotor = new Victor(RobotMap.rightIntakeMotor);
+        
+        /* Check Once Tested on Robot */
+        leftPiston = new PneumaticHelper(RobotMap.leftPistonPush, 
+                                         RobotMap.leftPistonPull,
+                                         RobotMap.leftPistonPull);
+        
+        rightPiston = new PneumaticHelper(RobotMap.rightPistonPush, 
+                                          RobotMap.rightPistonPull, 
+                                          RobotMap.rightPistonPull);
     }
 
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
         setDefaultCommand(new LoaderStop());
     }
     
@@ -49,5 +57,30 @@ public class Loader extends Subsystem {
     public void loaderOff(){
         leftMotor.set(0);
         rightMotor.set(0);
+    }
+    
+    public void loaderExtend(){
+        leftPiston.push();
+        rightPiston.push();
+    }
+    
+    public void loaderRetract(){
+        leftPiston.pull();
+        rightPiston.pull();
+    }
+    
+      public boolean isLoaderExtended()
+    {
+        return !leftPiston.isPushed().booleanValue() && !rightPiston.isPushed().booleanValue();
+    }
+    
+    public void setToDefaultPosition() {
+        leftPiston.setToDefault();
+        rightPiston.setToDefault();
+    }
+    
+    public void zeroSolenoids() {
+        leftPiston.reset();
+        rightPiston.reset();
     }
 }

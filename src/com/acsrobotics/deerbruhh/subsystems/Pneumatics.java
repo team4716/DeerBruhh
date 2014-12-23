@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.acsrobotics.deerbruhh.subsystems;
+
+// REVAMP PLEASE //
+
+/*package com.acsrobotics.deerbruhh.subsystems;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.acsrobotics.deerbruhh.RobotMap;
 
-/**
- *
- * @author Alessio
- */
+
 public class Pneumatics extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -39,3 +39,4 @@ public class Pneumatics extends Subsystem {
         mainCompressor.stop();
     }
 }
+*/

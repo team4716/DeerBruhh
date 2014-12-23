@@ -1,63 +1,54 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.acsrobotics.deerbruhh.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+/* Robot Imports */
 import com.acsrobotics.deerbruhh.OI;
 import com.acsrobotics.deerbruhh.RobotMap;
 import com.acsrobotics.deerbruhh.subsystems.DriveTrain;
 import com.acsrobotics.deerbruhh.subsystems.Loader;
-import com.acsrobotics.deerbruhh.subsystems.Pneumatics;
+//import com.acsrobotics.deerbruhh.subsystems.Pneumatics;
+/* ------ END ------ */
+
+/* WPILib Imports */
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Compressor;
+/* ------ END ------ */
 
-
-/**
- * <p>The CommandBase class is automatically generated when the project is created.
- * However, whenever you create a new subsystem, you must create a public static
- * reference to it in the CommandBase class. All commands (except for
- * CommandGroups) should be subclasses of CommandBase.</p>
- * 
- * <p>Recommended next step: {@link ClawDoNothing}</p>
- * 
- * @author Alex Henning
- */
 public abstract class CommandBase extends Command {
-    // CommandBase holds a static instance of OI
+    
+    /* Has to have this */
     public static OI oi;
+    /* ------ END ------ */
     
-    private static Compressor compressor;
+    private static Compressor compressor; // Calls Compressor Object
     
-    // Instances of each subsystem
+    /* Subsystems Required */
     public static DriveTrain drivetrain = new DriveTrain();
     public static Loader loader = new Loader();
-    public static Pneumatics pneumatics = new Pneumatics();
+    //public static Pneumatics pneumatics = new Pneumatics();
 
-    /**
-     * Call this command to properly finish initializing the CommandBase.
-     * This call is automatically included in the default template.
-     */
+   /* Initialize CommandBase */
     public static void init() {
         oi = new OI();
         
         // Optional: Logs the currently running command for each subsystem in
         //           the SmartDashboard. This can be useful for debugging.
         
-        //SmartDashboard
+        /* SmartDashboard Subsystem Data */
         SmartDashboard.putData(drivetrain);
         SmartDashboard.putData(loader);
+        /* ------ END ------ */
 
         
-        //Compressor
+        /* Compressor */
         compressor = new Compressor(RobotMap.compressor, RobotMap.compressorRelay);
         compressor.start();
+        /* ------ END ------ */
 
     }
     
-    // Automatically created constructors.
+    /* Automatically Created Constructors */
     public CommandBase(String name) { super(name); }
     public CommandBase() { super(); }
 }

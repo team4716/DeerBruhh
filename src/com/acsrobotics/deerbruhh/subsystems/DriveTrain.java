@@ -76,16 +76,23 @@ public class DriveTrain extends PIDSubsystem {
         arcadeDrive(output, output);
     }
     
-    /**
-     * Implements the tank drive capability of the drivetrain.
-     * 
-     * @param left The speed for the left side of the drivetrain.
-     * @param right The speed for the right side of the drivetrain.
-     */
+  
     public void arcadeDrive(double x, double y) {
         double xPow = Utils.rampSpeed(x, sensitivity/10);
         double yPow = Utils.rampSpeed(y, sensitivity/10);
         drive.arcadeDrive(xPow, yPow);
+    }
+    
+    public void increaseSensitivity(){
+        if(sensitivity < 10){
+            sensitivity += 1;
+        }
+    }
+    
+    public void decreaseSensitivity(){
+        if(sensitivity > 0){
+            sensitivity -= 1;
+        }
     }
     
     public void moveForward(){
