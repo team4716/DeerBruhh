@@ -5,10 +5,13 @@ import com.acsrobotics.deerbruhh.commands.Autonomous;
 import com.acsrobotics.deerbruhh.commands.Autonomous2;
 import com.acsrobotics.deerbruhh.commands.LoaderRelease;
 import com.acsrobotics.deerbruhh.commands.LoaderIntake;
+import com.acsrobotics.deerbruhh.commands.LoaderPull;
+import com.acsrobotics.deerbruhh.commands.LoaderPush;
 /* ------ END ------ */
 
 /* WPILib Imports */
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -52,15 +55,21 @@ public class OI {
         rbutton2.whileHeld(new LoaderIntake());
         rbutton3.whileHeld(new LoaderRelease());
         
+        rbutton6.whenPressed(new LoaderPush());
+        rbutton7.whenPressed(new LoaderPull());
+        
         /* ------------------ END ------------------ */
         
         /* Test Commands off the SmartDashboard */
         
         SmartDashboard.putData("Intake", new LoaderIntake());
         SmartDashboard.putData("Release", new LoaderRelease());
+        SmartDashboard.putData("Extend Loader", new LoaderPush());
+        SmartDashboard.putData("Retract Loader", new LoaderPull());
         SmartDashboard.putData("Autonomous 1", new Autonomous());
         SmartDashboard.putData("Autonomous 2", new Autonomous2());
         
+ 
         /* ------------------ END ------------------ */
         
     }

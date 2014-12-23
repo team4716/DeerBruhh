@@ -13,11 +13,13 @@ import com.acsrobotics.deerbruhh.commands.CommandBase;
 import com.acsrobotics.deerbruhh.commands.Autonomous;
 import com.acsrobotics.deerbruhh.commands.Autonomous2;
 
+
 /* ------ END ------ */
 
 /* WPILib Imports */
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -32,6 +34,8 @@ public class DeerBruhh extends IterativeRobot {
     
     Command autonomousCommand;
     SendableChooser autoChooser;
+    
+    Timer gameTimer;
     
     /* ------ END ------ */
 
@@ -49,10 +53,19 @@ public class DeerBruhh extends IterativeRobot {
         SmartDashboard.putData("Autonomous Mode Chooser", autoChooser);
         
         /* ------ END ------ */
-       
+        
+        
+        /* Timers */
+        
+        gameTimer = new Timer();
+        gameTimer.start();
+        
+        /* ------ END ------ */
+        
     }
 
     public void autonomousInit() {
+        gameTimer.reset();
         //Defines the Command that is Chosen via Smart Dashboard
         autonomousCommand = (Command) autoChooser.getSelected();
         
@@ -64,10 +77,11 @@ public class DeerBruhh extends IterativeRobot {
     }
 
     public void teleopInit() {
-       
+       gameTimer.reset();
     }
 
     public void teleopPeriodic() {
+        SmartDashboard.putNumber("Elapsed Time", gameTimer.get());
         Scheduler.getInstance().run();
     }
 }
