@@ -3,20 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/commands/CommandBase.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/commands/LoaderPull.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/RobotMap.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/Utils.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/subsystems/Loader.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/HelperClasses/PneumaticHelper.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/commands/Autonomous2.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/commands/Autonomous.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/commands/LoaderPush.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/DeerBruhh.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/OI.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/commands/DriveWithJoysticks.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/subsystems/DriveTrain.java</file>
-            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhhV1/src/com/acsrobotics/deerbruhh/subsystems/Pneumatics.java</file>
+            <file>file:/C:/Users/Alessio/Documents/NetBeansProjects/DeerBruhh/src/com/acsrobotics/deerbruhh/DeerBruhh.java</file>
         </group>
     </open-files>
 </project-private>

@@ -9,6 +9,7 @@ import com.acsrobotics.deerbruhh.OI;
 import com.acsrobotics.deerbruhh.Utils;
 import com.acsrobotics.deerbruhh.commands.DriveWithJoysticks;
 import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -101,6 +102,11 @@ public class DriveTrain extends PIDSubsystem {
     
     public void turnRight(){
         drive.drive(0.5, 0.5);
+    }
+    
+    public void addInLiveWindow(){
+        LiveWindow.addActuator(getName(), "Left Drive Motor", leftDrive);
+        LiveWindow.addActuator(getName(), "Right Drive Motor", rightDrive);
     }
 }
 

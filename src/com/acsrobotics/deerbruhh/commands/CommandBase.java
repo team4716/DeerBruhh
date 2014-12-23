@@ -39,7 +39,10 @@ public abstract class CommandBase extends Command {
         SmartDashboard.putData(drivetrain);
         SmartDashboard.putData(loader);
         /* ------ END ------ */
-
+        
+        /* LiveWindow Data (Only Works in Test Mode) */
+        drivetrain.addInLiveWindow();
+        /* ------ END ------ */
         
         /* Compressor */
         compressor = new Compressor(RobotMap.compressor, RobotMap.compressorRelay);
