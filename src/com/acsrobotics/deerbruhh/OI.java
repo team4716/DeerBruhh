@@ -7,6 +7,8 @@ import com.acsrobotics.deerbruhh.commands.LoaderRelease;
 import com.acsrobotics.deerbruhh.commands.LoaderIntake;
 import com.acsrobotics.deerbruhh.commands.LoaderPull;
 import com.acsrobotics.deerbruhh.commands.LoaderPush;
+import com.acsrobotics.deerbruhh.commands.ScissorDown;
+import com.acsrobotics.deerbruhh.commands.ScissorUp;
 /* ------ END ------ */
 
 /* WPILib Imports */
@@ -44,7 +46,9 @@ public class OI {
             rbutton5 = new JoystickButton(rightJoy, 5),
             rbutton6 = new JoystickButton(rightJoy, 6),
             rbutton7 = new JoystickButton(rightJoy, 7),
-            rbutton8 = new JoystickButton(rightJoy, 8);
+            rbutton8 = new JoystickButton(rightJoy, 8),
+            rbutton10 = new JoystickButton(rightJoy, 10),
+            rbutton11 = new JoystickButton(rightJoy, 11);
     
     /* ------------------ END ------------------ */
     
@@ -58,6 +62,9 @@ public class OI {
         rbutton6.whenPressed(new LoaderPush());
         rbutton7.whenPressed(new LoaderPull());
         
+        rbutton10.whileHeld(new ScissorUp());
+        rbutton11.whileHeld(new ScissorDown());
+        
         /* ------------------ END ------------------ */
         
         /* Test Commands off the SmartDashboard */
@@ -68,6 +75,8 @@ public class OI {
         SmartDashboard.putData("Retract Loader", new LoaderPull());
         SmartDashboard.putData("Autonomous 1", new Autonomous());
         SmartDashboard.putData("Autonomous 2", new Autonomous2());
+        SmartDashboard.putData("Scissor up", new ScissorUp());
+        SmartDashboard.putData("Scissor Down", new ScissorDown());
         
  
         /* ------------------ END ------------------ */

@@ -20,8 +20,8 @@ public class RobotMap {
     /* Digital I/O Mapping */
     
     public static final int
-            compressor = 1;
-            //sScissorLift = 2,
+            compressor = 1,
+            sScissorLift = 2;
             //sLauncher = 3;
     
     /* ------ END ------ */

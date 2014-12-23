@@ -5,37 +5,37 @@
  */
 package com.acsrobotics.deerbruhh.commands;
 
+import com.acsrobotics.deerbruhh.subsystems.ScissorLift;
+
 /**
  *
  * @author Alessio
  */
-public class LoaderRelease extends CommandBase {
+public class ScissorStop extends CommandBase {
     
-    public LoaderRelease() {
+    public ScissorStop() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(loader);
-        this.setTimeout(0.05);
+        requires(scissorlift);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        System.out.println("Release");
+        System.out.println("Scissor Lift Stopped");
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        loader.releaseBall();
+        scissorlift.ScissorStop();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isTimedOut();
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-        loader.loaderOff();
     }
 
     // Called when another command which requires one or more of the same

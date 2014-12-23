@@ -5,6 +5,7 @@ import com.acsrobotics.deerbruhh.OI;
 import com.acsrobotics.deerbruhh.RobotMap;
 import com.acsrobotics.deerbruhh.subsystems.DriveTrain;
 import com.acsrobotics.deerbruhh.subsystems.Loader;
+import com.acsrobotics.deerbruhh.subsystems.ScissorLift;
 //import com.acsrobotics.deerbruhh.subsystems.Pneumatics;
 /* ------ END ------ */
 
@@ -26,6 +27,7 @@ public abstract class CommandBase extends Command {
     /* Subsystems Required */
     public static DriveTrain drivetrain = new DriveTrain();
     public static Loader loader = new Loader();
+    public static ScissorLift scissorlift = new ScissorLift();
     //public static Pneumatics pneumatics = new Pneumatics();
 
    /* Initialize CommandBase */
@@ -38,6 +40,7 @@ public abstract class CommandBase extends Command {
         /* SmartDashboard Subsystem Data */
         SmartDashboard.putData(drivetrain);
         SmartDashboard.putData(loader);
+        SmartDashboard.putData(scissorlift);
         /* ------ END ------ */
         
         /* LiveWindow Data (Only Works in Test Mode) */
